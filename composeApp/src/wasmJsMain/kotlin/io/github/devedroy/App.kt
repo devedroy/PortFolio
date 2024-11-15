@@ -21,26 +21,7 @@ import portfolio.composeapp.generated.resources.compose_multiplatform
 fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
-        Scaffold(
-            topBar = {
-                Box(
-                    modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        modifier = Modifier.basicMarquee(),
-                        text = "This website is build using Kotlin/Wasm"
-                    )
-                }
-            },
-            bottomBar = {
-                Text(
-                    text = "This is the bottombar",
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-        ) { innerPadding ->
+        Scaffold { innerPadding ->
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -50,16 +31,16 @@ fun App() {
                     .verticalScroll(rememberScrollState()),
             ) {
                 Header()
-                Button(onClick = { showContent = !showContent }) {
-                    Text("Click me!")
-                }
-                AnimatedVisibility(showContent) {
-                    val greeting = remember { Greeting().greet() }
-                    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Image(painterResource(Res.drawable.compose_multiplatform), null)
-                        Text("Compose: $greeting")
-                    }
-                }
+//                Button(onClick = { showContent = !showContent }) {
+//                    Text("Click me!")
+//                }
+//                AnimatedVisibility(showContent) {
+//                    val greeting = remember { Greeting().greet() }
+//                    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+//                        Image(painterResource(Res.drawable.compose_multiplatform), null)
+//                        Text("Compose: $greeting")
+//                    }
+//                }
             }
         }
     }
